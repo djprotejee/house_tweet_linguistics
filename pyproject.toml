@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "house-tweet-linguistics"
+version = "0.1.0"
+description = "Statistical-linguistic comparison of U.S. House Republican and Democratic official tweet corpora."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib>=3.8",
+  "networkx>=3.2",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "python-dotenv>=1.0",
+  "requests>=2.31",
+  "scikit-learn>=1.4",
+  "scipy>=1.12",
+]
+
+[project.scripts]
+house-tweet-linguistics = "house_tweet_linguistics.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

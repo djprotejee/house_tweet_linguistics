@@ -1,0 +1,14 @@
+{
+  "start_time": "2025-01-03T00:00:00Z",
+  "end_time": "2026-01-03T00:00:00Z",
+  "max_posts_per_user": 1000,
+  "socialdata_max_posts_per_user": 50,
+  "socialdata_max_pages_per_account": 3,
+  "socialdata_price_per_tweet_usd": 0.0002,
+  "min_posts_per_user": 20,
+  "exclude_retweets": true,
+  "exclude_replies": true,
+  "tweet_text_mode": "cleaned",
+  "randomization_iterations": 1000,
+  "random_seed": 42
+}

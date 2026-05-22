@@ -1,0 +1,34 @@
+.venv/
+.idea/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.env
+
+# Research data and generated artifacts.
+data_json/*.jsonl
+
+data_txt/*
+!data_txt/.gitkeep
+
+data_tables/**/*.csv
+
+reports/**/*.csv
+
+# Keep report figures so Markdown reports render correctly on GitHub.
+# reports/**/figures/*.png
+
+logs/
+
+metadata/accounts_resolved.csv
+metadata/account_audit.csv
+metadata/collection_errors.csv
+metadata/socialdata_skip_accounts.csv
+
+!data_json/.gitkeep
+!data_tables/.gitkeep

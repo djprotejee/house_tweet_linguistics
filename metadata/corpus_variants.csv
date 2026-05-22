@@ -1,0 +1,3 @@
+corpus,jsonl_path,description,tweet_rows,balanced_accounts,balanced_democratic_accounts,balanced_republican_accounts,balanced_posts,full_accounts,full_posts,main_use
+strict,data_json/tweets.jsonl,Primary one-year authored-only corpus collected from House Press Gallery handles.,20838,410,205,205,20479,417,20798,Primary analysis and main conclusions
+extended,data_json/tweets_extended_window.jsonl,Maximized 50 posts per voting member corpus with supplemental extended-window and repaired-handle records flagged in JSON.,21450,424,212,212,21200,429,21450,"Robustness check, not the primary evidence base"
