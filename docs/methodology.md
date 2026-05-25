@@ -96,6 +96,8 @@ The project builds three UTF-8 text mirrors for each corpus and mode:
 - user-level files: one merged file per account;
 - party-level files: one merged file per party.
 
+Each mirror directory also includes `account_codebook.csv` and `tweet_manifest.csv`. The account codebook maps internal account codes such as `dem004` or `rep078` to the politician's name, party, state, district, and username. The tweet manifest maps every tweet-level text file to its account code, politician, tweet ID, and creation timestamp.
+
 The text mirrors make the corpus inspectable and reusable for external tools, but they are derived from the structured JSONL corpus files.
 
 ## Preprocessing

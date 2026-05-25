@@ -100,6 +100,11 @@ Build UTF-8 text mirrors:
 .\.venv\Scripts\python.exe -m house_tweet_linguistics mirrors --corpus extended --full
 ```
 
+Each mirror directory also contains:
+
+- `account_codebook.csv`: maps internal account codes such as `dem004` or `rep078` to name, party, state, district, and username.
+- `tweet_manifest.csv`: maps each `tweet_000001.txt` file to the account code, politician name, username, tweet ID, and creation timestamp.
+
 Run the full statistical-linguistic analysis:
 
 ```powershell

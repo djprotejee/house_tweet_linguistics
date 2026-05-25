@@ -24,6 +24,11 @@ The structured JSONL corpus files are the central machine-readable corpus layer:
 
 The text mirrors in `data_txt/` are derived from the JSONL files. They are important research outputs because they make the corpus readable and reusable in external text-analysis tools, but they are not the only source of truth.
 
+Each generated mirror directory contains two index files:
+
+- `account_codebook.csv`: account-code to politician metadata mapping;
+- `tweet_manifest.csv`: tweet text file to tweet metadata mapping.
+
 The analysis tables in `data_tables/` and figures in `reports/<corpus>_<mode>/figures/` are derived analytical outputs. They can be regenerated from the structured corpus and source code.
 
 Raw SocialData files in `data_json/socialdata*_raw*.jsonl` preserve collection provenance. They are useful for audit and reconstruction, but they are large and should be handled as research data rather than lightweight source files.
