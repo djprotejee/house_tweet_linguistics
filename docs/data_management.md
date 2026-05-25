@@ -69,6 +69,8 @@ Recommended to track:
 - `metadata/corpus_variants.csv`
 - `metadata/handle_repair_candidates.csv`
 - `metadata/inclusion_report_*.csv`
+- `data_json/tweets.jsonl`
+- `data_json/tweets_extended_window.jsonl`
 
 Recommended not to track in git:
 
@@ -78,7 +80,7 @@ Recommended not to track in git:
 - Python caches
 - `logs/`
 - `data_txt/`
-- raw JSONL API dumps
+- raw JSONL API dumps such as `data_json/socialdata_raw_pages.jsonl` and `data_json/socialdata_repair_*.jsonl`
 - large generated CSV tables
 - generated figures, unless a specific release needs a self-contained visual report
 

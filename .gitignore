@@ -12,6 +12,8 @@ __pycache__/
 
 # Research data and generated artifacts.
 data_json/*.jsonl
+!data_json/tweets.jsonl
+!data_json/tweets_extended_window.jsonl
 
 data_txt/*
 !data_txt/.gitkeep
