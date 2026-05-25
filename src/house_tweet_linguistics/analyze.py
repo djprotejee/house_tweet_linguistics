@@ -4,6 +4,9 @@ from collections import Counter
 from itertools import combinations
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
@@ -597,17 +600,32 @@ def run_analysis(balanced: bool = True, corpus: str = "strict") -> None:
     REPORTS = PROJECT_ROOT / "reports" / output_name
     FIGURES = REPORTS / "figures"
     ensure_dirs([TABLES, REPORTS, FIGURES])
+    print(f"[analysis] Starting corpus={corpus}, mode={mode_name}", flush=True)
+    print("[analysis] Selecting included accounts and tweets...", flush=True)
     accounts, tweets = _included_data(balanced, corpus)
+    print(f"[analysis] Selected {len(accounts)} accounts and {len(tweets)} tweets.", flush=True)
+    print("[analysis] Writing basic L/V features...", flush=True)
     write_basic_features(accounts, tweets)
+    print("[analysis] Combining account-level texts...", flush=True)
     users = _combined_texts_by_user(accounts, tweets)
+    print("[analysis] Writing Zipf and Heaps outputs...", flush=True)
     write_zipf_heaps(users)
+    print("[analysis] Writing n-grams...", flush=True)
     write_ngrams(users)
+    print("[analysis] Writing keywords...", flush=True)
     write_keywords(users)
+    print("[analysis] Computing account distances and clustering...", flush=True)
     write_distances_and_clusters(users.reset_index(drop=True), settings.random_seed)
+    print("[analysis] Running randomized-label control...", flush=True)
     write_randomization(users.reset_index(drop=True))
+    print("[analysis] Writing network features...", flush=True)
     write_networks(users)
+    print("[analysis] Writing repetition metrics...", flush=True)
     write_repetition(users)
+    print("[analysis] Writing stylometric features...", flush=True)
     write_style_features(tweets, users)
+    print("[analysis] Writing NMF topics, issue dictionaries, and classifier...", flush=True)
     write_topic_issue_and_classifier_analysis(tweets, users, TABLES, FIGURES, settings.random_seed)
+    print("[analysis] Writing correlations and temporal autocorrelations...", flush=True)
     write_correlations_and_autocorrelations(users, tweets)
     print(f"Analysis complete. Corpus={corpus}. Balanced={balanced}. Tables: {TABLES}. Figures: {FIGURES}.")
